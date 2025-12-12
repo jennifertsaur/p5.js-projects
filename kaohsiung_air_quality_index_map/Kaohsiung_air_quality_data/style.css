@@ -1,0 +1,124 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+canvas {
+  display: block;
+  pointer-events: none;
+}
+
+/* slider */
+#aqiSlider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 520px;                  
+  height: 14px;
+  background: transparent;
+  accent-color: initial;
+  position: fixed;
+  left: 50px;
+  bottom: 80px;
+  z-index: 1000;
+
+  /* ensure no invisible padding/margins affect track math */
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+/* Track — Chrome/Safari/Edge */
+#aqiSlider::-webkit-slider-runnable-track {
+  height: 8px;
+  background: #ccc;
+  border-radius: 0;
+  border: 1px solid #555;
+  box-sizing: border-box;
+}
+
+/* Thumb — Chrome/Safari/Edge */
+#aqiSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 8px;                  
+  height: 24px;
+  background: #000;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  margin-top: -9px;              
+}
+
+/* Tick marks*/
+#sliderTicks {
+  position: fixed;
+  height: 10px;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+/* vertical tick line */
+.tick {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  height: 10px;
+  background: #666;
+  transform: translateX(-1px);  
+}
+
+/* date label under each tick — use Inter ONLY here */
+.tickLabel,
+#dateLabel,           
+.date-text {          
+  position: absolute;
+  bottom: -19px;
+  transform: translateX(-50%);
+  font-size: 10px;
+  white-space: nowrap;
+
+  font-family: "Inter";
+}
+
+/*step buttons*/
+.stepBtn {
+  position: fixed;
+  bottom: 78px;
+  user-select: none;
+  cursor: pointer;
+  background: transparent;    
+  border: none;               
+  width: 0;
+  height: 0;
+  z-index: 1000;
+}
+
+/* Left (previous) triangle */
+#prevBtn {
+  left: 15px;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-right: 16px solid #333; 
+}
+
+/* Right (next) triangle */
+#nextBtn {
+  left: 580px; /* adjust horizontally for placement */
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 16px solid #333;
+}
+
+
+/* Textbox content */
+#textBox,
+.text-box,
+input[type="text"],
+textarea {
+  font-family: "Inter";
+}
+
+/* "Kaohsiung"*/
+#kaohsiungLabel,
+.kaohsiung-label {
+  font-family: "Inter";
+}
